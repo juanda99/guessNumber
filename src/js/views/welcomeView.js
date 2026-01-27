@@ -1,4 +1,5 @@
 import { renderGame } from './gameView.js';
+export let userName;
 
 export function renderWelcome() {
   document.querySelector('#app').innerHTML = `
@@ -10,7 +11,7 @@ export function renderWelcome() {
   // Añadir listener al botón
   document.querySelector('#startGame').addEventListener('click', () => {
     // recoger el nombre del usuario y si no está vació, iniciar el juego
-    const userName = document.querySelector('#userName').value;
+    userName = document.querySelector('#userName').value;
     if (userName.trim() !== '') {
       renderGame();
     }
